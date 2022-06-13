@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Character } from 'src/app/models/character.model';
+
 
 @Component({
   selector: 'app-character-details',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterDetailsComponent implements OnInit {
 
-  constructor() { }
+  @Input() detailCharacter: Character = new Character();
+
+  @Output() updateCharEvent = new EventEmitter<Character>();
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  submitt() {
+    this.updateCharEvent.emit(this.detailCharacter)
   }
 
 }

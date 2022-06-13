@@ -13,12 +13,11 @@
           </li>
         </ul>
         <!-- Details -->
-        <div id="edit-component" class="col-md-6" *ngIf="detailCharacter.title != ''">
-          <input id="char-title" type="text" class="form-control" [(ngModel)]="detailCharacter.title">
-          <label for="char-description">Description:</label>
-          <input id="char-description" type="text" class="form-control" [(ngModel)]="detailCharacter.description">
-          <p class="">Publicado: {{detailCharacter.published}}</p>
-          <button class="btn btn-success">Save</button>
+        <div class="col-md-6">
+          <app-character-details
+          [detailCharacter]="detailCharacter"
+          (updateCharEvent)="submit($event)"
+          *ngIf="detailCharacter.title != ''"></app-character-details>
         </div>
       </div>
     </div>

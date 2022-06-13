@@ -1,22 +1,9 @@
 {
   "characters": [
     {
-      "id": 11,
-      "title": "consequuntur",
-      "description": "Expedita similique aut sed ducimus voluptatem. Autem error ea eveniet debitis cupiditate sequi tenetur vero qui. Et quidem iure optio autem ad fuga. Repellendus alias veritatis cum et error et tenetur. Enim illum omnis.",
-      "published": true
-    },
-    {
-      "id": 12,
-      "title": "tenetur",
-      "description": "A eaque repellat. Mollitia aut fuga cumque distinctio earum occaecati soluta quos. Aut itaque ut nostrum voluptate error vitae. Nihil libero quas dignissimos ipsa. Saepe qui iste.",
-      "published": true
-    },
-    {
-      "id": 13,
-      "title": "facere",
-      "description": "Eaque et non. Aspernatur reprehenderit iste dolorum modi aliquid.",
-      "published": false
+      "title": "Custom Character",
+      "description": "The character's description.",
+      "id": 11
     },
     {
       "id": 14,

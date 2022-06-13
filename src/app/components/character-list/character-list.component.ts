@@ -19,6 +19,28 @@ export class CharacterListComponent implements OnInit {
 
   }
 
+  // Child submit
+  submit(char: Character) {
+    this.detailCharacter = char;
+    this.update();
+  }
+
+  // Update
+  update(): void {
+    this.charactersService.update(this.detailCharacter.id, {
+      title: this.detailCharacter.title,
+      description: this.detailCharacter.description
+    }).subscribe(
+      (response: any) => {
+        this.getAllCharacters();
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
+
+  }
+
   // Get all
   getAllCharacters(): void {
     this.charactersService.list().subscribe(
@@ -46,5 +68,7 @@ export class CharacterListComponent implements OnInit {
   details(char: Character) {
     this.detailCharacter = char;
   }
+
+
 
 }
