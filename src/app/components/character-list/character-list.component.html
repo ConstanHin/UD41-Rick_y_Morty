@@ -1,1 +1,11 @@
-<p>character-list works!</p>
+<main>
+  <section id="section-char-list">
+    <ul>
+      <li class="mt-5" *ngFor="let character of charactersList">
+        <h1 class="fs-4">{{character.title}}</h1>
+        <p class="">{{character.description}}</p>
+        <p class="">Publicado: {{character.published}}</p>
+      </li>
+    </ul>
+  </section>
+</main>
