@@ -7,7 +7,7 @@ for (let i = 1; i < 51; i++) {
     id: i,
     title: faker.lorem.word(),
     description: faker.lorem.sentences(),
-    published: true,
+    published: faker.datatype.boolean(),
   });
 
 }
