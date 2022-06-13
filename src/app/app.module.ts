@@ -10,13 +10,19 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeCompComponent } from './home-comp/home-comp.component';
 import { CharactersViewComponent } from './characters-view/characters-view/characters-view.component';
 import { AboutComponent } from './about/about.component';
+import { AddCharacterComponent } from './conponents/add-character/add-character.component';
+import { CharacterDetailsComponent } from './components/character-details/character-details.component';
+import { CharacterListComponent } from './components/character-list/character-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeCompComponent,
-    AboutComponent
+    AboutComponent,
+    AddCharacterComponent,
+    CharacterDetailsComponent,
+    CharacterListComponent
   ],
   imports: [
     BrowserModule,
