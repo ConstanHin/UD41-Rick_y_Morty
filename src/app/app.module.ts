@@ -11,6 +11,7 @@ import { CharacterDetailsComponent } from './components/character-details/charac
 import { CharacterListComponent } from './components/character-list/character-list.component';
 import { AddCharacterComponent } from './components/add-character/add-character.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     BrowserModule,
     AppRoutingModule,
     CharactersViewModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

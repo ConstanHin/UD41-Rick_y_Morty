@@ -1,11 +1,26 @@
 <main>
   <section id="section-char-list">
-    <ul>
-      <li class="mt-5" *ngFor="let character of charactersList">
-        <h1 class="fs-4">{{character.title}}</h1>
-        <p class="">{{character.description}}</p>
-        <p class="">Publicado: {{character.published}}</p>
-      </li>
-    </ul>
+    <div class="container">
+      <div class="row my-4">
+        <!-- List -->
+        <ul class="col-md-6 list-group">
+          <li class="border list-group-item" *ngFor="let character of charactersList">
+            <div class="item">
+              <h1 class="fs-4 d-inline">{{character.title}}</h1>
+              <button class="btn btn-warning ms-auto m-2 float-end" (click)="details(character)">Edit</button>
+              <button class="btn btn-danger ms-auto m-2 float-end" (click)="delete(character.id)">Delete</button>
+            </div>
+          </li>
+        </ul>
+        <!-- Details -->
+        <div id="edit-component" class="col-md-6" *ngIf="detailCharacter.title != ''">
+          <input id="char-title" type="text" class="form-control" [(ngModel)]="detailCharacter.title">
+          <label for="char-description">Description:</label>
+          <input id="char-description" type="text" class="form-control" [(ngModel)]="detailCharacter.description">
+          <p class="">Publicado: {{detailCharacter.published}}</p>
+          <button class="btn btn-success">Save</button>
+        </div>
+      </div>
+    </div>
   </section>
 </main>

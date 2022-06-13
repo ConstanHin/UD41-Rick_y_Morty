@@ -9,9 +9,10 @@ import { CharacterService } from 'src/app/serivces/character.service';
 })
 export class CharacterListComponent implements OnInit {
 
-  charactersList : Character[] = [];
+  charactersList: Character[] = [];
+  detailCharacter: Character = new Character();
 
-  constructor(private charactersService: CharacterService) {}
+  constructor(private charactersService: CharacterService) { }
 
   ngOnInit(): void {
     this.getAllCharacters()
@@ -19,10 +20,31 @@ export class CharacterListComponent implements OnInit {
   }
 
   // Get all
-  getAllCharacters() : void {
-    this.charactersService.list().subscribe((value) => {
-      this.charactersList = value;
-    })
+  getAllCharacters(): void {
+    this.charactersService.list().subscribe(
+      (characters: any) => {
+        this.charactersList = characters;
+      },
+      (error: any) => {
+        console.log(error);
+      });
+  }
+
+  // Delete
+  delete(id: any): void {
+    this.charactersService.delete(id).subscribe(
+      (response: any) => {
+        console.log("delete OK, response:", response);
+        this.getAllCharacters();
+      },
+      (error: any) => {
+        console.log(error);
+      });
+  }
+
+  // Details - mostrar el componente details
+  details(char: Character) {
+    this.detailCharacter = char;
   }
 
 }
